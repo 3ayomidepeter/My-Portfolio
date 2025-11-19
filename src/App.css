@@ -1,4 +1,4 @@
 /* If not using PostCSS, import the compiled Tailwind CSS instead */
-@import '../path-to-your-compiled-tailwind.css';
+@import "../path-to-your-compiled-tailwind.css";
 
 /* Custom styles for App */

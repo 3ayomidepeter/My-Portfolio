@@ -99,6 +99,15 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col items-center justify-center">
       <header className="sticky top-0 z-30 backdrop-blur bg-white/60 dark:bg-gray-900/60 border-b border-gray-200 dark:border-gray-800 w-full">
@@ -133,8 +142,13 @@ export default function App() {
               {dark ? "☀️" : "🌙"}
             </button>
             <button
-              onClick={() => setMobileOpen(true)}
-              aria-label="Open menu"
+              type="button"
+              onClick={() => {
+                console.log("hamburger clicked", !mobileOpen);
+                setMobileOpen((s) => !s);
+              }}
+              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
               className="px-3 py-1 rounded border"
             >
               ☰
@@ -455,49 +469,56 @@ export default function App() {
                 ) : (
                   <span className="opacity-60">Live demo coming soon</span>
                 )}
-
-                {/* Mobile slide-over nav */}
-                {mobileOpen && (
-                  <div className="fixed inset-0 z-40">
-                    <div
-                      className="absolute inset-0 bg-black/40"
-                      onClick={() => setMobileOpen(false)}
-                    />
-                    <motion.aside
-                      initial={{ x: "100%" }}
-                      animate={{ x: 0 }}
-                      exit={{ x: "100%" }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="absolute right-0 top-0 h-full w-72 bg-white dark:bg-gray-900 p-6"
-                    >
-                      <nav className="flex flex-col gap-4">
-                        <a
-                          href="#about"
-                          onClick={() => setMobileOpen(false)}
-                          className="underline"
-                        >
-                          About
-                        </a>
-                        <a
-                          href="#projects"
-                          onClick={() => setMobileOpen(false)}
-                          className="underline"
-                        >
-                          Projects
-                        </a>
-                        <a
-                          href="#contact"
-                          onClick={() => setMobileOpen(false)}
-                          className="underline"
-                        >
-                          Contact
-                        </a>
-                      </nav>
-                    </motion.aside>
-                  </div>
-                )}
               </div>
             </div>
+          </div>
+        )}
+        {/* Mobile slide-over nav */}
+        {mobileOpen && (
+          <div className="fixed inset-0 z-40">
+            <div
+              className="absolute inset-0 bg-black/40"
+              onClick={() => setMobileOpen(false)}
+            />
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="absolute right-0 top-0 h-full w-72 bg-white dark:bg-gray-900 p-6"
+            >
+              <button
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setMobileOpen(false)}
+                className="absolute top-3 right-3 px-2 py-1 rounded border"
+              >
+                ✕
+              </button>
+              <nav className="flex flex-col gap-4 mt-8">
+                <a
+                  href="#about"
+                  onClick={() => setMobileOpen(false)}
+                  className="underline"
+                >
+                  About
+                </a>
+                <a
+                  href="#projects"
+                  onClick={() => setMobileOpen(false)}
+                  className="underline"
+                >
+                  Projects
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="underline"
+                >
+                  Contact
+                </a>
+              </nav>
+            </motion.aside>
           </div>
         )}
       </main>

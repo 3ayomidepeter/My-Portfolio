@@ -13,7 +13,7 @@ export default function App() {
         "A small React app that lets users enter attendee details, preview a ticket rendered to a canvas, save tickets to localStorage, and export tickets as image files for download. Useful for event organizers who want quick printable/exportable tickets without a backend.",
       tags: ["React", "Canvas", "Tailwind"],
       link: "https://github.com/3ayomidepeter/Conference-Ticket",
-      demo: "https://3ayomidepeter.github.io/Conference-Ticket",
+      demo: "https://conference-ticket-two.vercel.app/",
       screenshot: "Conference-ticket.png",
     },
     {
@@ -23,7 +23,7 @@ export default function App() {
       overview:
         "Boardify is a responsive kanban board built with React that supports drag-and-drop, filtering, and saving board state to localStorage.",
       tags: ["React", "Drag & Drop", "LocalStorage"],
-      link: "https://github.com/yourname/boardify",
+      link: "https://github.com/3ayomidepeter/Boardify-Task-Manager",
       demo: "https://boardify-task-manager.vercel.app/",
       screenshot: "boardify.png",
     },

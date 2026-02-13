@@ -253,7 +253,7 @@ export default function App() {
                 </p>
                 <p className="mt-4 text-sm">
                   <a
-                    href="/Olowooje Ayomide-React Developer.pdf"
+                    href="/Olowooje Ayomide-Frontend Developer.pdf"
                     download
                     className="underline mr-2"
                   >
@@ -386,7 +386,7 @@ export default function App() {
               onSubmit={(e) => {
                 e.preventDefault();
                 alert(
-                  "Thanks — this is a demo form. Replace with a server endpoint or Netlify Forms."
+                  "Thanks — this is a demo form. Replace with a server endpoint or Netlify Forms.",
                 );
               }}
             >

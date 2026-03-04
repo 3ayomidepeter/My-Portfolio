@@ -1,49 +1,83 @@
-# React + Vite
+# Ayomide Olowooje — Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, accessible, and performant portfolio built with React, TypeScript, Tailwind CSS, and Framer Motion.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dark/Light mode** — System-aware with manual toggle
+- **Responsive** — Mobile-first design, works on all screen sizes
+- **Accessible** — ARIA labels, keyboard navigation, skip-to-content link
+- **Animated** — Smooth transitions powered by Framer Motion
+- **Project filtering** — Search and filter projects by tag
+- **Project modals** — Detailed project view with screenshots
+- **Contact form** — Client-side validated contact form
+- **SEO optimized** — Meta tags, Open Graph, Twitter Card, structured data (JSON-LD)
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React 18](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v3](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Vite](https://vitejs.dev/)
 
-## Deploying on Vercel
+## 🛠️ Getting Started
 
-This repository is ready to deploy on Vercel. Follow these steps:
+### Prerequisites
 
-1. Sign in to Vercel at https://vercel.com and connect your GitHub account.
-2. Import this repository into Vercel by selecting the repo `3ayomidepeter/My-Portfolio`.
-3. In the project settings (during import), set the:
-   - Framework preset: `Other` (Vite uses a static build)
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. (Optional) Add `Vite` base if you are hosting under a subpath — but for Vercel this is typically not required. If you do, set `VITE_BASE` in Project Environment Variables.
-5. Deploy — Vercel will build the static site using `vite build` and serve files from the `dist` folder.
+- Node.js >= 20
 
-Notes:
+### Installation
 
-- `vercel.json` is included to ensure that SPA routes fall back to `index.html` so navigation works correctly on refresh.
-- If you see engine warnings about Node versions, set the `Node` version in Vercel to `20.x` or add the engines property:
-  ```json
-  "engines": { "node": ">=20.19.0" }
-  ```
+```bash
+npm install
+```
 
-If you prefer continuous deployment with GitHub Pages, `gh-pages` is included in `devDependencies` and `npm run deploy` can push `/dist` to `gh-pages`. But for Vercel you don't need that — simply import the repo.
+### Development
 
-## Automatic deployment with GitHub Actions (Vercel)
+```bash
+npm run dev
+```
 
-You can automatically deploy when you push to `main` by adding a GitHub secret with your Vercel credentials and using the included workflow:
+### Build
 
-1. In your GitHub repo, go to Settings → Secrets → Actions and create the following secrets:
+```bash
+npm run build
+```
 
-- `VERCEL_TOKEN` — create via Vercel dashboard (Account → Tokens → Create Token)
-- `VERCEL_ORG_ID` — Project settings / General in the Vercel dashboard
-- `VERCEL_PROJECT_ID` — Project settings / General in the Vercel dashboard
+### Preview
 
-2. Push to `main` — GitHub Actions will run `npm run build` and call Vercel to deploy.
+```bash
+npm run preview
+```
 
-The workflow is in `.github/workflows/deploy-vercel.yml` and uses the official Vercel Action to publish your site automatically.
+## 📁 Project Structure
+
+```
+src/
+  components/       # React components
+    Header.tsx
+    Hero.tsx
+    About.tsx
+    Projects.tsx
+    ProjectCard.tsx
+    ProjectModal.tsx
+    Contact.tsx
+    Footer.tsx
+    MobileNav.tsx
+  data/
+    projects.ts     # Project data and skills
+  types/
+    index.ts        # TypeScript interfaces
+  App.tsx           # Root component
+  main.jsx          # Entry point
+  index.css         # Tailwind imports
+```
+
+## 🌐 Deployment
+
+This project is deployed on [Vercel](https://vercel.com/). The `vercel.json` handles SPA routing.
+
+## 📄 License
+
+MIT

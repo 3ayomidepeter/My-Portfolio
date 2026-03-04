@@ -3,7 +3,22 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  // Use VITE_BASE env to override base (helpful: GH Pages needs a repo subpath).
-  // Example: `cross-env VITE_BASE=/My-Portfolio/ npm run build`
   base: process.env.VITE_BASE || "/",
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          motion: ["framer-motion"],
+        },
+      },
+    },
+    sourcemap: false,
+    minify: "esbuild",
+  },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
 });

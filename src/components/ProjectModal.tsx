@@ -1,6 +1,7 @@
 import React, { useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "../types";
+import { DEFAULT_SCREENSHOT } from "../types";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -50,7 +51,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           >
             <div className="relative">
               <img
-                src={`/${project.screenshot || "Conference-ticket.png"}`}
+                src={`/${project.screenshot || DEFAULT_SCREENSHOT}`}
                 alt={`${project.title} screenshot`}
                 className="w-full h-56 object-cover"
               />

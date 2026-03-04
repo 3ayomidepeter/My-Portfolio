@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import type { Project } from "../types";
+import { DEFAULT_SCREENSHOT } from "../types";
 
 interface ProjectCardProps {
   project: Project;
@@ -20,7 +21,7 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
       <div className="relative">
         <div className="overflow-hidden rounded-lg">
           <img
-            src={`/${project.screenshot || "Conference-ticket.png"}`}
+            src={`/${project.screenshot || DEFAULT_SCREENSHOT}`}
             alt={`${project.title} screenshot`}
             loading="lazy"
             className="w-full h-44 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"

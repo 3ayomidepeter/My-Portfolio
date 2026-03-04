@@ -13,3 +13,5 @@ export interface Skill {
   name: string;
   category?: string;
 }
+
+export const DEFAULT_SCREENSHOT = "Conference-ticket.png";

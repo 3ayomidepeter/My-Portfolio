@@ -43,7 +43,7 @@ export const projects: Project[] = [
     tags: ["React", "LocalStorage", "CSS"],
     link: "https://github.com/3ayomidepeter/exploration",
     demo: "https://exquisite-home.netlify.app/",
-    screenshot: "Travel%20Journal.png",
+    screenshot: "Travel Journal.png",
   },
 ];
 

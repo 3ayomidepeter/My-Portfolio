@@ -58,6 +58,7 @@ export default function Contact() {
       return;
     }
     setLoading(true);
+    // Simulated delay – replace with actual submission (e.g. EmailJS or a server endpoint)
     await new Promise((res) => setTimeout(res, 1000));
     setLoading(false);
     setForm({ name: "", email: "", message: "" });

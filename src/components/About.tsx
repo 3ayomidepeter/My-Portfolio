@@ -61,7 +61,7 @@ export default function About() {
             </p>
             <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-sm space-y-2">
               <a
-                href="/Olowooje Ayomide-Frontend Developer.pdf"
+                href="/Olowooje%20Ayomide-Frontend%20Developer.pdf"
                 download
                 className="flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
                 aria-label="Download resume as PDF"

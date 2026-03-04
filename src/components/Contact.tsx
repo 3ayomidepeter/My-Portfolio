@@ -124,7 +124,6 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           name="contact"
-          data-netlify="true"
           className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-md"
           onSubmit={handleSubmit}
           noValidate
